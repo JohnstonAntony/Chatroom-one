@@ -1,0 +1,34 @@
+.container {
+  display: grid;
+  grid-template-areas:
+    "header header"
+    "menu content"
+    "menu textbox";
+  grid-template-columns: 1fr 2fr;
+  background-color: blue;
+  padding: 5px;
+  height: 850px;
+  width: 80%;
+  margin-left: 10%;
+  color: white;
+}
+
+.container div {
+  background-color: green;
+  border: 3px solid black;
+  height: 100px;
+}
+.container div.header {
+  grid-area: header;
+  text-align: center;
+}
+.container div.menu {
+  grid-area: menu;
+}
+.container div.content {
+  grid-area: content;
+}
+.container div.textbox {
+  grid-area: textbox;
+  text-align: center;  
+}
