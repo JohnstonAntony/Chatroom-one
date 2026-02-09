@@ -5,16 +5,16 @@
     "menu content"
     "menu textbox";
   grid-template-columns: 1fr 2fr;
-  background-color: rgb(49, 174, 252);
+  background-color: rgb(50, 50, 50);
   padding: 5px;
   height: 850px;
   width: 80%;
   margin-left: 10%;
-  color: white;
+  color: rgb(124, 124, 124);
 }
 
 .container div {
-  background-color: green;
+  background-color: rgb(37, 37, 37);
   border: 3px solid black;
   height: 100px;
 }
