@@ -11,7 +11,7 @@ socketio = SocketIO(app)
 
 @app.route('/')
 def index():
-    return "Chatroom is online!"
+    return render_template("home.html")
 
 if __name__ == '__main__':
     socketio.run(app, debug=True)

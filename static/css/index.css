@@ -5,7 +5,7 @@
     "menu content"
     "menu textbox";
   grid-template-columns: 1fr 2fr;
-  background-color: blue;
+  background-color: rgb(49, 174, 252);
   padding: 5px;
   height: 850px;
   width: 80%;
