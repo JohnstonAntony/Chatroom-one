@@ -18,16 +18,20 @@
   border: 3px solid black;
   height: 100px;
 }
+
 .container div.header {
   grid-area: header;
   text-align: center;
 }
+
 .container div.menu {
   grid-area: menu;
 }
+
 .container div.content {
   grid-area: content;
 }
+
 .container div.textbox {
   grid-area: textbox;
   text-align: center;  
