@@ -2,22 +2,53 @@
 <html>  
     <head> 
        <title>Login</title>
+       <style>
+        body 
+        {
+            height:100vh;
+            margin:0;
+            display: flex;
+            justify-content: center;
+            align-items: top;
+        }
+
+
+       </style>
     </head>
     <body> 
-        <h1>Please Login</h1>
-        <p>Enter Username and password</p>
-        <from>
-            <label> Username: </label>
-            <input type = "text" name = "username" id = "username" placeholder = "Enter Username" required> 
+        <main>
+            <section> 
+              
+              <h1>Please Login</h1>
+              <p>Enter Username and Password</p>
+                <form>
+                    <div>
+                    <label>Username: </label>
+                    <input type = "text" 
+                    name = "username" 
+                    id = "username" 
+                    placeholder = "Enter Username"
+                    minlength="3" required> 
+                    </div>
 
-            <br><br> <!-- Line break cause I don't want to make css yet ;o -->
-            <label> Password: </label>
-            <input type = "password" name = "password" id = "password" placeholder = "Enter Password" required>
+                  
+                    <div>
+                    <label>Password:&nbsp;  </label>
+                    <input type = "password" 
+                    name = "password" 
+                    id = "password" 
+                    placeholder = "Enter Password" 
+                    minlength="3" required>
+                    </div>
+                 
+                    <div>
+                    <br><br>
+                    <input type = "submit" value = "Login">
+                    </div>
 
-            <br><br>
-            <input type = "submit" value = "Login">
-
-        </from>
+                </form>
+            </section>
+        </main>
     </body>
 
 
