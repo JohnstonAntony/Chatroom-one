@@ -11,7 +11,7 @@ socketio = SocketIO(app)
 
 @app.route('/')
 def index():
-    return render_template("Login.html")
+    return render_template("login.html")
 
 @socketio.on('message')
 def handle_message(msg):
