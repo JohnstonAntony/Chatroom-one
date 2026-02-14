@@ -10,8 +10,12 @@ app = Flask(__name__)
 socketio = SocketIO(app)
 
 @app.route('/')
-def index():
+def login():
     return render_template("login.html")
+
+@app.route('/room')
+def room():
+    return render_template("room.html")
 
 @socketio.on('message')
 def handle_message(msg):
