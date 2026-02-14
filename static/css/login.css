@@ -8,4 +8,5 @@ body {
 
 main {
     margin-top: 9%;
+    border: 3px solid black;
 }
