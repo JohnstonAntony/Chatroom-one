@@ -1,28 +1,46 @@
 .container {
-  /* background-color: gray; */
-  /* padding: 5px; */
-  /* height: 850px; */
   width: 80%;
   margin-left: 10%;
   margin-top: 3%;
-  color: ghostwhite;
-  background-color: aliceblue;
   border: 3px solid black;
+  display: flex;
+  flex-direction: column;
+  color: black;
+  font-size: 25px;
 }
 
-/* .container div {
-  background-color: rgb(37, 37, 37);
-  border: 3px solid black;
-} */
-
-.container h1{
-  background-color: green;
+.chat_group {
+  background-color: limegreen;
+}
+.chat_display {
+   background-color: lime;
+  border-top: 3px solid black;
+  padding: 10px;
+  flex-grow: 1; 
 }
 
-.container p{
+.msg_sending {
+  border-top: 2px solid black;
+  padding: 10px;
+  background-color:limegreen;
+}
+
+.msg_sending form {
+  display: flex;   
+}
+
+#msg {
+  flex-grow: 1; 
+}
+
+input[type="submit"] {
+  padding: 10px 20px;
+  margin-left: 20px;
   background-color: lime;
   color: black;
-  font-family: sans-serif;
-  font-size: 30px;
-  display: inline-block;
+  cursor: pointer;
+}
+
+body {
+  background-color: yellowgreen; 
 }

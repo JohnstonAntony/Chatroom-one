@@ -8,11 +8,23 @@
 <body>
 
 <div class="container">
-    <h1>Chatroom One</h1>
-    <p>Person 1: Yo</p><br>
-    <p>Person 1: What do you think about going gym today</p><br>
-    <p>Person 1: ???</p><br>
+    <div class="chat_group">
+        <h1>Chatroom One</h1>
+    </div>
+    <div class="chat_display">
+        <p>Person 1: Yo</p><br>
+        <p>Person 1: What do you think about going gym today</p><br>
+        <p>Person 1: ???</p><br>
+    </div>
+
+    <div class="msg_sending">
+        <form action="/room" method="get">
+            <input type="text" id="msg" name="msg" placeholder = "Type your message..."><br>
+            <input type="submit" value="Send">
+        </form> 
+    </div>
 </div>
 
 </body>
 </html>
+
