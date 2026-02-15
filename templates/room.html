@@ -11,19 +11,58 @@
     <div class="chat_group">
         <h1>Chatroom One</h1>
     </div>
-    <div class="chat_display">
-        <p>Person 1: Yo</p><br>
-        <p>Person 1: What do you think about going gym today</p><br>
-        <p>Person 1: ???</p><br>
+    <div class="chat_display" id="chat_display">
     </div>
 
     <div class="msg_sending">
-        <form action="/room" method="get">
+        <form id="message_input">
             <input type="text" id="msg" name="msg" placeholder = "Type your message..."><br>
             <input type="submit" value="Send">
         </form> 
     </div>
 </div>
+
+
+<!-- This block below is JS and downloads socket io from a libery so it can be used maintain live connection. 
+ It also stops the page from refreshing after submiting message and sents the message to flask-->
+<script src="https://cdn.socket.io/4.8.3/socket.io.min.js"></script> 
+<script>
+    const socket = io(); 
+
+    socket.on ("connect",() => { 
+        console.log ("Now connected to Chatroom_One, ID:", socket.id); // when connected this runs once to show you connected 
+
+        // socket.send("message"); //<- can send web message but for useless now can enable later
+
+    });
+
+    const form = document.getElementById("message_input"); // grabs html message-input ID from room.html/form/
+const msgInput = document.getElementById("msg"); // does the same thing as up 
+
+form.addEventListener("submit", (event) => { // runs every time a msg is submitted. 
+    event.preventDefault(); // stops refreshing 
+
+    const text = msgInput.value.trim();
+    if (text.length === 0) return; // trims empty space in msg. 
+
+    socket.send(text);
+    msgInput.value= ""; // sends to flask 
+
+    const chatDisplay = document.getElementById("chat_display"); // grabs html chat display id
+
+    socket.on ("message",(msg) => { // listens for message send and runs this func.
+        const p = document.createElement("p"); // creates new element called p to store messages
+        p.textContent = msg; 
+
+        chatDisplay.appendChild(p); // displays new element 
+        chatDisplay.appendChild(document,createElement("br")); // break line so new txt apears below
+
+        chatDisplay.scrollTop = chatDisplay.scrollHeight; // auto scroll but it doesnt work now. 
+    });
+
+});
+</script>
+
 
 </body>
 </html>

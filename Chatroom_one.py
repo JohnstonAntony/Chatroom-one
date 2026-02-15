@@ -19,6 +19,7 @@ def room():
 
 @socketio.on('message')
 def handle_message(msg):
+    print("server got:", msg)
     emit('message', msg, broadcast=True) 
     # this bit emits the message to everyone, read the pusedo code in the word doc to see what we should try. 
 
