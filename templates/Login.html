@@ -3,6 +3,7 @@
     <head> 
        <title>Login</title>
        <link rel="stylesheet" href="static/css/login.css">    
+       <link rel="stylesheet" href="static/js/login.js">    
     </head>
     <body> 
         <main>
@@ -32,12 +33,15 @@
 
                     <div class="button">
                     <!-- <br><br> -->
-                    <input type="image" src="/static/images/normal_cat.png" alt="Login" width="100">
+                    <input type="image" src="/static/images/normal_cat.png" alt="Login" onclick="playSound()">
                     </div>
 
                 </form>
             </section>
         </main>
+
+        <audio id="audio" src="static/audio/battle_cats_defeat.mp3"></audio>
+        <script src="static/js/login.js"></script>
     </body>
 
 
