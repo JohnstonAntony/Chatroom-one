@@ -36,10 +36,25 @@
 
     });
 
-    const form = document.getElementById("message_input"); // grabs html message-input ID from room.html/form/
-const msgInput = document.getElementById("msg"); // does the same thing as up 
+   
 
-form.addEventListener("submit", (event) => { // runs every time a msg is submitted. 
+    const form = document.getElementById("message_input"); // grabs html message-input ID from room.html/form/
+    const msgInput = document.getElementById("msg"); // does the same thing as up 
+    const chatDisplay = document.getElementById("chat_display"); // grabs html chat display id
+
+
+
+    socket.on ("message",(msg) => { // listens for message send and runs this func.
+        const p = document.createElement("p"); // creates new element called p to store messages
+        p.textContent = msg; 
+
+        chatDisplay.appendChild(p); // displays new element 
+        chatDisplay.appendChild(document.createElement("br")); // break line so new txt apears below
+
+        chatDisplay.scrollTop = chatDisplay.scrollHeight; // auto scroll but it doesnt work now. 
+    });
+
+ form.addEventListener("submit", (event) => { // runs every time a msg is submitted. 
     event.preventDefault(); // stops refreshing 
 
     const text = msgInput.value.trim();
@@ -48,19 +63,11 @@ form.addEventListener("submit", (event) => { // runs every time a msg is submitt
     socket.send(text);
     msgInput.value= ""; // sends to flask 
 
-    const chatDisplay = document.getElementById("chat_display"); // grabs html chat display id
-
-    socket.on ("message",(msg) => { // listens for message send and runs this func.
-        const p = document.createElement("p"); // creates new element called p to store messages
-        p.textContent = msg; 
-
-        chatDisplay.appendChild(p); // displays new element 
-        chatDisplay.appendChild(document,createElement("br")); // break line so new txt apears below
-
-        chatDisplay.scrollTop = chatDisplay.scrollHeight; // auto scroll but it doesnt work now. 
-    });
 
 });
+
+
+    
 </script>
 
 
