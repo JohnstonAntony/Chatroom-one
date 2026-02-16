@@ -3,39 +3,26 @@
     <head> 
        <title>Login</title>
        <link rel="stylesheet" href="static/css/login.css">    
-       <link rel="stylesheet" href="static/js/login.js">    
-    </head>
+       </head>
     <body> 
         <main>
             <section> 
-              
               <h1>Please Login</h1>
               <p>Enter Username and Password</p>
-                <form action="/room" method="get">
+                <form action="/login_check" method="POST">
                     <div>
-                    <label>Username: </label>
-                    <input type="text" 
-                    name="username" 
-                    id="username" 
-                    placeholder="Enter Username"
-                    minlength="3" required> 
+                        <label>Username: </label>
+                        <input type="text" name="username" id="username" placeholder="Enter Username" minlength="3" required> 
                     </div>
-
                   
                     <div>
-                    <label>Password:&nbsp;  </label>
-                    <input type="password" 
-                    name="password" 
-                    id="password" 
-                    placeholder="Enter Password" 
-                    minlength="3" required>
+                        <label>Password:&nbsp;   </label>
+                        <input type="password" name="password" id="password" placeholder="Enter Password" minlength="3" required>
                     </div>
 
                     <div class="button">
-                    <!-- <br><br> -->
-                    <input type="image" src="/static/images/normal_cat.png" alt="Login" onclick="playSound()">
+                        <input type="image" src="/static/images/normal_cat.png" alt="Login" onclick="playSound()">
                     </div>
-
                 </form>
             </section>
         </main>
@@ -43,6 +30,4 @@
         <audio id="audio" src="static/audio/battle_cats_defeat.mp3"></audio>
         <script src="static/js/login.js"></script>
     </body>
-
-
 </html>
