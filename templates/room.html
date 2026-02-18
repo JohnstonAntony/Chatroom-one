@@ -27,7 +27,8 @@
  It also stops the page from refreshing after submiting message and sents the message to flask-->
 <script src="https://cdn.socket.io/4.8.3/socket.io.min.js"></script> 
 <script>
-    const socket = io(); 
+    const socket = io();
+    const username = prompt("Enter username:"); // place holder until we connect the login page to this just wanna see how it works
 
     socket.on ("connect",() => { 
         console.log ("Now connected to Chatroom_One, ID:", socket.id); // when connected this runs once to show you connected 
@@ -46,7 +47,7 @@
 
     socket.on ("message",(msg) => { // listens for message send and runs this func.
         const p = document.createElement("p"); // creates new element called p to store messages
-        p.textContent = msg; 
+        p.textContent = `${msg.username}: ${msg.text}`;
 
         chatDisplay.appendChild(p); // displays new element 
         chatDisplay.appendChild(document.createElement("br")); // break line so new txt apears below
@@ -60,7 +61,7 @@
     const text = msgInput.value.trim();
     if (text.length === 0) return; // trims empty space in msg. 
 
-    socket.send(text);
+    socket.send({username: username, text: text});
     msgInput.value= ""; // sends to flask 
 
 
