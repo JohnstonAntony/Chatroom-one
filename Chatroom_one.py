@@ -41,7 +41,8 @@ def login_check():
         session['username'] = user_value # This "saves" the login
         return redirect(url_for('room')) # Goes to next page
     else:
-        return redirect(url_for('login')) # Wrong? Just reloads login
+        error = "Incorrect Login Details"
+        return render_template("login.html", error=error) #Wrong login details displays incorrect login details message
 
 @app.route('/room')
 def room():

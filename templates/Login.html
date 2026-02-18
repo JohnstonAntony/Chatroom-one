@@ -10,6 +10,13 @@
                <header>
                     <h1>Please Login</h1>
                     <p>Enter Username and Password</p>
+                    
+                    <!-- This only displays if Python sends an error. -->
+                    {% if error %}
+                    <div class="errorMessage">
+                        <p>{{ error }}</p>
+                    </div>
+                    {% endif %}
                </header>
                 <form action="/login_check" method="POST">
                    
