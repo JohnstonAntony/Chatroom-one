@@ -7,17 +7,18 @@
     <body> 
         <main>
             <section> 
-              <h1>Please Login</h1>
-              <p>Enter Username and Password</p>
+               <header>
+                    <h1>Please Login</h1>
+                    <p>Enter Username and Password</p>
+               </header>
                 <form action="/login_check" method="POST">
-                    <div>
-                        <label>Username: </label>
-                        <input type="text" name="username" id="username" placeholder="Enter Username" minlength="3" required> 
-                    </div>
-                  
-                    <div>
-                        <label>Password:&nbsp;   </label>
+                   
+                    <div class ="input1">
+
+                        <input type="text" name="username" id="username" placeholder="Enter Username" minlength="3" required>
+                        <br> 
                         <input type="password" name="password" id="password" placeholder="Enter Password" minlength="3" required>
+
                     </div>
 
                     <div class="button">

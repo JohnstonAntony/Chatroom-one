@@ -1,18 +1,67 @@
+
+
 body {
     margin: 0; 
+    padding: 0;
     height: 100%; 
 
     display : flex; 
-    justify-content: center;
+    justify-content: center; 
+    font-family: "SnellRoundhand", cursive;
+    background: linear-gradient(to right, #fcfcfc, #fae1ff)
 }
+
+
 
 main {
     margin-top: 11%;
-    border: 3px solid black;
-    padding: 30px;
+    border: 1px solid black;
+    padding: 10px;
+    border-radius: 10px;
+    background: #fcfcfc;
+    box-shadow: 0 0 15px rgba(0,0,0, 0.1);
 }
 
 .button {
-    margin-left: 25px;
+    margin-left: 0px;
+    size: 20px;
+    margin-bottom: 0px;
 }
 
+header {
+    text-align: center;
+    margin-bottom: 5px;
+    margin-top: 5px;
+}
+
+h1{
+    font-size: 35px;
+}
+
+p{
+    font-size: 20px;
+}
+
+
+form {
+    display: flex;
+    max-width: 450px;
+    padding: 30px;
+    border-radius: 10px;
+    justify-content: center;
+}
+
+
+
+input1 {
+    width: 25%;
+    padding: 12px;
+    background-color: #fae1ff;
+    border-radius: 8px;
+    border: none;
+    outline: none;
+    font-size: 16px;
+    color: black;
+    margin-bottom: 20px;
+
+} 
