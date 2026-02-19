@@ -28,7 +28,7 @@
 <script src="https://cdn.socket.io/4.8.3/socket.io.min.js"></script> 
 <script>
     const socket = io();
-    const username = prompt("Enter username:"); // place holder until we connect the login page to this just wanna see how it works
+    const username = "{{ username }}";  // takes username from website and puts it in as username.
 
     socket.on ("connect",() => { 
         console.log ("Now connected to Chatroom_One, ID:", socket.id); // when connected this runs once to show you connected 

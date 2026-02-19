@@ -49,7 +49,7 @@ def room():
     # Only allows entry if they logged in successfully
     if 'username' not in session:
         return redirect(url_for('login')) #Stay at login page
-    return render_template("room.html") # Shows chatroom
+    return render_template("room.html", username = session['username']) # Shows chatroom + stores username in a readable form for HTML.
 
 @socketio.on('message')
 def handle_message(msg):
