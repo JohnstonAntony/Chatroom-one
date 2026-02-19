@@ -9,8 +9,7 @@
             <section> 
                <header>
                     <h1>Please Login</h1>
-                    <p>Enter Username and Password</p>
-                    
+        
                     <!-- This only displays if Python sends an error. -->
                     {% if error %}
                     <div class="errorMessage">
@@ -20,7 +19,7 @@
                </header>
                 <form action="/login_check" method="POST">
                    
-                    <div class ="input1">
+                    <div class ="inputFeilds">
 
                         <input type="text" name="username" id="username" placeholder="Enter Username" minlength="3" required>
                         <br> 
