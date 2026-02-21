@@ -1,5 +1,4 @@
 
-
 body {
     margin: 0; 
     padding: 0;
@@ -7,7 +6,7 @@ body {
 
     display : flex; 
     justify-content: center; 
-    font-family: "SnellRoundhand", cursive;
+    font-family: "Brush Script MT, Brush Script Std", cursive;
     background: linear-gradient(to right, #fcfcfc, #faffe9)
 }
 

@@ -13,8 +13,8 @@
   background-color: limegreen;
 }
 .chat_display {
-  background-color: rgb(213, 0, 0);
-  border-top: 3px solid rgb(239, 9, 9);
+  background-color: lime;
+  border-top: 3px solid black;
   padding: 10px;
   flex-grow: 1; 
   overflow-y : auto;
@@ -22,7 +22,7 @@
 }
 
 .msg_sending {
-  border-top: 2px solid rgb(255, 0, 0);
+  border-top: 2px solid black;
   padding: 10px;
   background-color:limegreen;
 }
