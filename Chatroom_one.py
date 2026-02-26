@@ -60,6 +60,6 @@ def handle_message(msg):
 
 
 if __name__ == '__main__':
-    socketio.run(app, debug=True, host = '0.0.0.0')
+    socketio.run(app, debug=True) # host = '0.0.0.0') #turned it off so I don't have to keep turning off my network firewall. 
 
 
