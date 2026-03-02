@@ -24,6 +24,8 @@ h1{
   float: right; 
   width: 1489px; /*Visually adjusted to match the width will fine tune later */
   overflow-y: auto;
+  line-height: 1px;
+  word-wrap: break-word; /* BUGGGGG - TEXT that is very long doesn't overflow to next line will fix later  */
 } 
 
  .msg_sending form {
@@ -34,6 +36,10 @@ h1{
 
 #msg {
   flex-grow: 1; 
+  margin: 2px;
+  padding: 1px;
+  line-height: 1px;
+  text-indent: 1px;
 } 
 
 body {
