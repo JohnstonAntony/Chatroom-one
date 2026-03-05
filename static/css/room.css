@@ -7,11 +7,20 @@
   --accent-color: #454545; 
 }
 
+.darkmode{
+  --primary-color: #121313;
+  --secondary-color: #393a3b;
+  --text-color: #8a8a8a;
+  --background-color: #323232;
+  --gardient: linear-gradient(to right, #402b00, #100b01);
+  --accent-color: #7e7e7e; 
+}
+
 #theme-set {
   position: fixed;
   height: 30px;
   width: 30px;
-  border-radius: 40%;
+  border-radius: 40%; 
   top: 16px;
   left: 210px;
   background-color: var(--accent-color);
