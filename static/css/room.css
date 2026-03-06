@@ -18,14 +18,16 @@
 
 #theme-set {
   position: fixed;
-  height: 30px;
-  width: 30px;
-  border-radius: 40%; 
+  height: 40px;
+  width: 40px;
+  border-radius: 50%;
   top: 16px;
   left: 210px;
   background-color: var(--accent-color);
+  color: white;
   border: none;
   cursor: pointer;
+  font-size: 18px;
 }
 
 

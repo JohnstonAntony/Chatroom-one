@@ -2,11 +2,19 @@
 <html>
 <head>
     <title>Top Secret Chatroom</title>
+
+    <script>
+        const savedTheme = localStorage.getItem("theme"); // Saved theme from local storage, also put the script here as it loads first so it doesn't flicker.
+        if (savedTheme === "dark") {
+            document.documentElement.classList.add("darkmode");
+        }
+    </script>
+
     <link rel="stylesheet" href="/static/css/room.css">
 </head>
 
-<body class = "darkmode"> 
-    <button id="theme-set"></button>
+ <body> <!-- [class = "darkmode"] use this if you want to test dark mode manually. --> 
+    <button id="theme-set" type ="button">NM</button>
 
 <div class="container">
     <div class="top_bar">
@@ -44,6 +52,14 @@
     const form = document.getElementById("message_input"); // grabs html message-input ID from room.html/form/
     const msgInput = document.getElementById("msg"); // does the same thing as up 
     const chatDisplay = document.getElementById("chat_display"); // grabs html chat display id
+    const themeRoot = document.documentElement; // grabs html root element for theme button
+    const themeButton = document.getElementById("theme-set"); // grabs html theme button id
+
+    function updateThemeButton() {
+    themeButton.textContent = themeRoot.classList.contains("darkmode") ? "D" : "N";
+    } // updates theme button text to D or N depending on the theme.
+
+    updateThemeButton(); // this bit repeats but it. just runs the function.
 
 
 
@@ -57,7 +73,7 @@
         chatDisplay.scrollTop = chatDisplay.scrollHeight; // auto scroll but it doesnt work now. 
     });
 
- form.addEventListener("submit", (event) => { // runs every time a msg is submitted. 
+    form.addEventListener("submit", (event) => { // runs every time a msg is submitted. 
     event.preventDefault(); // stops refreshing 
 
     const text = msgInput.value.trim();
@@ -65,9 +81,20 @@
 
     socket.send({username: username, text: text});
     msgInput.value= ""; // sends to flask 
+    });
+    
 
 
-});
+   themeButton.addEventListener("click", () => {
+    themeRoot.classList.toggle("darkmode"); // toggles dark mode on and off when button is clicked.
+    localStorage.setItem(
+        "theme",
+        themeRoot.classList.contains("darkmode") ? "dark" : "light"
+    ); // saves theme to local storage so it stays when refreshed.
+    updateThemeButton(); // runs function mentioned before. 
+    });
+
+
 
 
     
