@@ -6,6 +6,8 @@ app = Flask(__name__)
 app.secret_key = "battle_cats_key_2026"
 socketio = SocketIO(app)
 
+active_users = set() # Set to store active users
+
 def init_db():
     connection = sqlite3.connect('chatroom.db')
     cursor = connection.cursor()
@@ -56,6 +58,22 @@ def handle_message(msg):
     print("server got:", msg)
     emit('message', msg, broadcast=True) 
     # this bit emits the message to everyone, read the pusedo code in the word doc to see what we should try. 
+
+@socketio.on('connect')
+def handle_connect(): # handles connect message when a user connects to the chatroom.
+    username = session.get('username') # get's username from session.
+    if username:
+        active_users.add(username) # adds to 'set' 
+        emit('user_list',list(active_users), broadcast=True) #sends to everyone, notice it's getting converted to a list because sets can't be sent as JSON.
+        print(f"{username} connected. Active users: {active_users}")
+
+@socketio.on('disconnect')
+def handle_disconnect(): # handles disconnect message when a user disconnects from the chatroom.
+    username = session.get('username')
+    if username:
+        active_users.discard(username)
+        emit('user_list', list(active_users), broadcast=True)
+        print(f"{username} disconnected. Active users: {active_users}")
 
 
 
