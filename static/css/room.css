@@ -80,3 +80,27 @@ h1{
 body {
   background: var(--gardient);
 }
+
+/* .container {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.sidebar {
+    width: 150px;
+    padding: 10px;
+    border-right: 1px solid #ccc;
+}
+
+.sidebar h3 {
+    margin-top: 0;
+}
+
+.sidebar ul {
+    list-style: none;
+    padding: 0;
+}
+
+.sidebar li {
+    padding: 4px 0;
+} */

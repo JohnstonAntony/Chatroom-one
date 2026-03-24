@@ -21,6 +21,12 @@
         <div class ="command_cell">Commands</div>
         <h1>Chatroom One</h1>
     </div>
+    <div class="sidebar">
+        <h3>Online Users</h3>
+        <ul id="user_list"></ul>
+
+
+    </div>
     <div class="chat_display" id="chat_display">
     </div>
 
@@ -45,6 +51,16 @@
 
         // socket.send("message"); //<- can send web message but for useless now can enable later
 
+    });
+
+    socket.on('user_list', (users) => {
+    const list = document.getElementById('user_list');
+    list.innerHTML = '';  
+    users.forEach(user => {
+        const li = document.createElement('li');
+        li.textContent = user;
+        list.appendChild(li);
+    });
     });
 
    
