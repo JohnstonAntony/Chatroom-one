@@ -2,34 +2,41 @@
 <html>
 <head>
     <title>Top Secret Chatroom</title>
-
+ 
     <script>
         const savedTheme = localStorage.getItem("theme"); // Saved theme from local storage, also put the script here as it loads first so it doesn't flicker.
         if (savedTheme === "dark") {
             document.documentElement.classList.add("darkmode");
         }
     </script>
-
+ 
     <link rel="stylesheet" href="/static/css/room.css">
 </head>
-
- <body> <!-- [class = "darkmode"] use this if you want to test dark mode manually. --> 
-    <button id="theme-set" type ="button">NM</button>
-
+ 
+ <body>
+ 
 <div class="container">
     <div class="top_bar">
-        <div class ="command_cell">Commands</div>
+        <div class="top_bar_left">
+            <div class="command_cell">Commands</div>
+            <button id="theme-set" type="button">NM</button>
+        </div>
+ 
         <h1>Chatroom One</h1>
+ 
+        <div class="top_bar_right"></div>
     </div>
-    <div class="sidebar">
-        <h3>Online Users</h3>
-        <ul id="user_list"></ul>
-
-
+ 
+    <div class="main_content">
+        <div class="sidebar">
+            <h3>Online Users</h3>
+            <ul id="user_list"></ul>
+        </div>
+ 
+        <div class="chat_display" id="chat_display">
+        </div>
     </div>
-    <div class="chat_display" id="chat_display">
-    </div>
-
+ 
     <div class="msg_sending">
         <form id="message_input">
             <input type="text" id="msg" name="msg" placeholder = "Type your message..."><br>
@@ -37,7 +44,6 @@
         </form> 
     </div>
 </div>
-
 
 <!-- This block below is JS and downloads socket io from a libery so it can be used maintain live connection. 
  It also stops the page from refreshing after submiting message and sents the message to flask-->

@@ -51,35 +51,80 @@ h3 {
   padding: 0.5rem;
 }
 
+.top_bar_left {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+ 
+.top_bar_right {
+  flex: 1;
+}
 .main_content {
   display: flex;
   flex: 1;
   min-height: 0;
 }
 
-.darkmode{
+/* Components */
+
+
+.sidebar {
+  width: 200px;
+  padding: 0.5rem;
+  background-color: var(--secondary-color);
+  overflow-y: auto;
+}
+
+.sidebar ul {
+  list-style: none;
+  padding: 0.5rem;
+}
+
+.chat_display {
+  flex: 1;
+  background-color: var(--background-color);
+  border-left: 2px solid var(--accent-color);
+  padding: 0.75rem;
+  overflow-y: auto;
+  word-wrap: break-word;
+  line-height: 1.5;
+}
+
+.msg_sending form {
+  display: flex;
+  padding: 0.5rem;
+  gap: 0.5rem;
+}
+
+#msg {
+  flex: 1;
+  padding: 0.5rem;
+  font-size: 1rem;
+}
+
+/* State and utilities */
+
+.darkmode {
   --primary-color: #121313;
   --secondary-color: #393a3b;
   --text-color: #8a8a8a;
   --background-color: #323232;
-  --gardient: linear-gradient(to right, #402b00, #100b01);
-  --accent-color: #7e7e7e; 
+  --gradient: linear-gradient(to right, #402b00, #100b01);
+  --accent-color: #7e7e7e;
 }
 
 #theme-set {
-  position: fixed;
   height: 40px;
   width: 40px;
   border-radius: 50%;
-  top: 16px;
-  left: 210px;
   background-color: var(--accent-color);
   color: white;
   border: none;
   cursor: pointer;
-  font-size: 18px;
+  font-size: 1rem;
 }
-
 
 
 
@@ -91,30 +136,8 @@ h3 {
 
 }
 
-.chat_display {
-  background-color: var(--background-color);
-  border-top: 3px solid var(--background-color);
-  padding: 10px;
-  height: 725px;
-  float: right; 
-  width: 1489px; /*Visually adjusted to match the width will fine tune later */
-  overflow-y: auto;
-  line-height: 1px;
-  word-wrap: break-word; /* BUGGGGG - TEXT that is very long doesn't overflow to next line will fix later  */
-} 
 
- .msg_sending form {
-  margin-left: 15%;
-    display: flex;
-  margin-top: 750px;  
- }
 
-#msg {
-  flex-grow: 1; 
-  margin: 2px;
-  padding: 1px;
-  line-height: 1px;
-  text-indent: 1px;
-} 
+
 
 
